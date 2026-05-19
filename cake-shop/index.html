@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Island Cake</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<div>
+
+<img src="assets/images/logo.png" class="logo-small">
+
+<h2>Island Cake</h2>
+
+<ul>
+
+<li>
+<a href="index.html">🏠 Beranda</a>
+</li>
+
+<li>
+<a href="profile.html">👤 Profile</a>
+</li>
+
+<li>
+<a href="orders.html">🛒 Pesanan</a>
+</li>
+
+<li>
+<a href="rating.html">⭐ Penilaian</a>
+</li>
+
+<li>
+<a href="settings.html">⚙ Pengaturan</a>
+</li>
+
+</ul>
+
+<div class="alamat">
+
+<h3>Alamat Toko</h3>
+
+<p>
+Jl. Anggrek Putih No.7 <br>
+Cianjur Jawa Barat
+</p>
+
+</div>
+
+</div>
+
+<button onclick="logout()" class="logout-btn">
+Logout
+</button>
+
+</aside>
+
+<!-- CONTENT -->
+
+<main class="content">
+
+<!-- BANNER -->
+
+<div class="banner">
+
+<div>
+
+<h1>
+Selamat Datang di Island Cake 🍰
+</h1>
+
+<p>
+Nikmati berbagai cake premium dengan rasa terbaik
+dan topping berkualitas.
+</p>
+
+<a href="#cartItems" class="pesan-btn">
+Pesan Sekarang
+</a>
+
+</div>
+
+<img src="assets/images/logo.png">
+
+</div>
+
+<!-- SEARCH -->
+
+<div class="topbar">
+
+<input type="text"
+id="search"
+placeholder="Cari Produk...">
+
+</div>
+
+<!-- KATEGORI -->
+
+<div class="kategori">
+
+<div class="kategori-box">
+🍰 Cake
+</div>
+
+<div class="kategori-box">
+🍩 Donut
+</div>
+
+<div class="kategori-box">
+🎂 Birthday
+</div>
+
+<div class="kategori-box">
+☕ Coffee
+</div>
+
+</div>
+
+<!-- PRODUK -->
+
+<div class="products">
+
+<!-- PRODUCT 1 -->
+
+<div class="product-card">
+
+<img src="assets/images/tiramisu.jpeg">
+
+<h3>Tiramisu Cake</h3>
+
+<p class="harga">
+Rp 55.000
+</p>
+
+<p class="rating">
+⭐⭐⭐⭐⭐
+</p>
+
+<div class="btn-group">
+
+<button onclick="detailProduct(
+'Tiramisu Cake',
+'Cake premium lembut',
+'Rp 55.000',
+'⭐⭐⭐⭐⭐'
+)">
+Detail
+</button>
+
+<button onclick="addCart(
+'Tiramisu Cake',
+55000
+)">
+Tambah
+</button>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 2 -->
+
+<div class="product-card">
+
+<img src="assets/images/birthday.jpeg">
+
+<h3>Birthday Cake</h3>
+
+<p class="harga">
+Rp 50.000
+</p>
+
+<p class="rating">
+⭐⭐⭐⭐
+</p>
+
+<div class="btn-group">
+
+<button onclick="detailProduct(
+'Birthday Cake',
+'Cake ulang tahun premium',
+'Rp 50.000',
+'⭐⭐⭐⭐'
+)">
+Detail
+</button>
+
+<button onclick="addCart(
+'Birthday Cake',
+50000
+)">
+Tambah
+</button>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 3 -->
+
+<div class="product-card">
+
+<img src="assets/images/donut.jpeg">
+
+<h3>Donut</h3>
+
+<p class="harga">
+Rp 10.000
+</p>
+
+<p class="rating">
+⭐⭐⭐⭐⭐
+</p>
+
+<div class="btn-group">
+
+<button onclick="detailProduct(
+'Donut',
+'Donut topping premium',
+'Rp 10.000',
+'⭐⭐⭐⭐⭐'
+)">
+Detail
+</button>
+
+<button onclick="addCart(
+'Donut',
+10000
+)">
+Tambah
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- CART -->
+
+<aside class="cart-section">
+
+<div class="cart-header">
+
+<h2>🛒 Keranjang</h2>
+
+<p id="jumlahItem">
+0 Item
+</p>
+
+</div>
+
+<div id="cartItems" class="cart-items">
+
+<!-- ITEM MASUK DI SINI -->
+
+</div>
+
+<div class="cart-summary">
+
+<div class="summary-row">
+<span>Subtotal</span>
+<span id="subtotal">Rp 0</span>
+</div>
+
+<div class="summary-row">
+<span>Biaya Admin</span>
+<span>Rp 0</span>
+</div>
+
+<div class="summary-row total-row">
+<span>Total</span>
+<span id="total">Rp 0</span>
+</div>
+
+</div>
+
+<h3 class="payment-title">
+💳 Metode Pembayaran
+</h3>
+
+<select id="paymentMethod">
+
+<option>DANA</option>
+
+<option>Bank BRI</option>
+
+<option>Bank Mandiri</option>
+
+<option>Cash</option>
+
+</select>
+
+<button onclick="checkout()" class="checkout-btn">
+Proses Pembayaran
+</button>
+
+</aside>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<span class="close"
+onclick="closeModal()">
+&times;
+</span>
+
+<h2 id="detailNama"></h2>
+
+<p id="detailDesc"></p>
+
+<p id="detailHarga"></p>
+
+<p id="detailRating"></p>
+
+</div>
+
+</div>
+
+<script>
+
+if(localStorage.getItem('login') != 'true'){
+
+window.location.href='login.html';
+
+}
+
+let cart=[];
+
+let total=0;
+
+function addCart(nama,harga){
+
+cart.push({
+nama:nama,
+harga:harga
+});
+
+total += harga;
+
+renderCart();
+
+}
+
+function renderCart(){
+
+let html='';
+
+cart.forEach((item,index)=>{
+
+html += `
+<div class="cart-item">
+
+<h4>${item.nama}</h4>
+
+<p>Rp ${item.harga}</p>
+
+<div class="qty-box">
+
+<button onclick="kurangItem(${index})">
+-
+</button>
+
+<button onclick="tambahItem(${index})">
++
+</button>
+
+</div>
+
+<button onclick="hapusItem(${index})">
+Hapus
+</button>
+
+</div>
+`;
+
+});
+
+document.getElementById('cartItems')
+.innerHTML=html;
+
+document.getElementById('total')
+.innerHTML=total.toLocaleString();
+
+}
+
+function tambahItem(index){
+
+total += cart[index].harga;
+
+renderCart();
+
+}
+
+function kurangItem(index){
+
+if(total > 0){
+
+total -= cart[index].harga;
+
+renderCart();
+
+}
+
+}
+
+function hapusItem(index){
+
+total -= cart[index].harga;
+
+cart.splice(index,1);
+
+renderCart();
+
+}
+
+function checkout(){
+
+let payment =
+document.getElementById('paymentMethod').value;
+
+localStorage.setItem(
+'orders',
+JSON.stringify(cart)
+);
+
+localStorage.setItem(
+'payment',
+payment
+);
+
+window.location.href='receipt.html';
+
+}
+
+function logout(){
+
+localStorage.removeItem('login');
+
+window.location.href='login.html';
+
+}
+
+function detailProduct(
+nama,
+desc,
+harga,
+rating
+){
+
+document.getElementById('modal')
+.style.display='block';
+
+document.getElementById('detailNama')
+.innerHTML=nama;
+
+document.getElementById('detailDesc')
+.innerHTML=desc;
+
+document.getElementById('detailHarga')
+.innerHTML=harga;
+
+document.getElementById('detailRating')
+.innerHTML=rating;
+
+}
+
+function closeModal(){
+
+document.getElementById('modal')
+.style.display='none';
+
+}
+
+document.getElementById('search')
+.addEventListener('keyup',function(){
+
+let value=this.value.toLowerCase();
+
+let cards=
+document.querySelectorAll('.product-card');
+
+cards.forEach(card=>{
+
+if(card.innerText
+.toLowerCase()
+.includes(value)){
+
+card.style.display='block';
+
+}else{
+
+card.style.display='none';
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

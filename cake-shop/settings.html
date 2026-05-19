@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Pengaturan</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+body{
+background:#f5f5f5;
+font-family:Poppins;
+}
+
+.page-container{
+width:900px;
+margin:40px auto;
+}
+
+.page-title{
+font-size:35px;
+color:#c98b98;
+margin-bottom:30px;
+}
+
+.setting-card{
+background:white;
+padding:25px;
+border-radius:25px;
+margin-bottom:25px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.setting-left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.setting-icon{
+width:70px;
+height:70px;
+background:#f8dfe5;
+border-radius:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+}
+
+.setting-info h2{
+margin-bottom:8px;
+}
+
+.setting-info p{
+color:#666;
+}
+
+.setting-btn{
+padding:12px 18px;
+border:none;
+border-radius:12px;
+background:#c98b98;
+color:white;
+cursor:pointer;
+font-size:15px;
+}
+
+.setting-btn:hover{
+background:#b06d7d;
+}
+
+.status-active{
+color:green;
+font-weight:bold;
+}
+
+.back-btn{
+padding:14px 20px;
+border:none;
+border-radius:15px;
+background:#c98b98;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+}
+
+.dark-mode{
+background:#1e1e1e;
+color:white;
+}
+
+.dark-mode .setting-card{
+background:#2b2b2b;
+color:white;
+}
+
+.dark-mode .setting-info p{
+color:#ccc;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page-container">
+
+<h1 class="page-title">
+⚙ Pengaturan
+</h1>
+
+<!-- DARK MODE -->
+
+<div class="setting-card">
+
+<div class="setting-left">
+
+<div class="setting-icon">
+🌙
+</div>
+
+<div class="setting-info">
+
+<h2>Dark Mode</h2>
+
+<p>
+Aktifkan tampilan gelap untuk kenyamanan mata
+</p>
+
+</div>
+
+</div>
+
+<button
+class="setting-btn"
+onclick="darkMode()">
+Aktifkan
+</button>
+
+</div>
+
+<!-- NOTIFIKASI -->
+
+<div class="setting-card">
+
+<div class="setting-left">
+
+<div class="setting-icon">
+🔔
+</div>
+
+<div class="setting-info">
+
+<h2>Notifikasi</h2>
+
+<p>
+Pemberitahuan promo dan pesanan terbaru
+</p>
+
+</div>
+
+</div>
+
+<p class="status-active">
+Aktif
+</p>
+
+</div>
+
+<!-- BAHASA -->
+
+<div class="setting-card">
+
+<div class="setting-left">
+
+<div class="setting-icon">
+🌐
+</div>
+
+<div class="setting-info">
+
+<h2>Bahasa</h2>
+
+<p>
+Bahasa aplikasi yang digunakan
+</p>
+
+</div>
+
+</div>
+
+<p>
+Indonesia
+</p>
+
+</div>
+
+<!-- KEAMANAN -->
+
+<div class="setting-card">
+
+<div class="setting-left">
+
+<div class="setting-icon">
+🔒
+</div>
+
+<div class="setting-info">
+
+<h2>Keamanan Akun</h2>
+
+<p>
+Password dan data akun terenkripsi aman
+</p>
+
+</div>
+
+</div>
+
+<p class="status-active">
+Aman
+</p>
+
+</div>
+
+<!-- VERSI -->
+
+<div class="setting-card">
+
+<div class="setting-left">
+
+<div class="setting-icon">
+📱
+</div>
+
+<div class="setting-info">
+
+<h2>Versi Aplikasi</h2>
+
+<p>
+Island Cake Bakery v1.0.0
+</p>
+
+</div>
+
+</div>
+
+<p>
+Terbaru
+</p>
+
+</div>
+
+<a href="index.html">
+
+<button class="back-btn">
+← Kembali ke Beranda
+</button>
+
+</a>
+
+</div>
+
+<script>
+
+function darkMode(){
+
+document.body.classList.toggle('dark-mode');
+
+}
+
+</script>
+
+</body>
+</html>
